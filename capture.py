@@ -20,7 +20,7 @@ CLIP_Y2 = 360
 with open('model.json','r') as f:
     model_json = json.load(f)
 loaded_model = model_from_json(json.dumps(model_json))
-loaded_model.load_weights('epoch1_model.h5')
+loaded_model.load_weights('epoch5_model.h5')
 
 #loaded_model = load_model('first.h5')
 
