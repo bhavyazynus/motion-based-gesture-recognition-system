@@ -8,6 +8,7 @@ import json
 from PIL import Image
 import pygame
 
+
 pygame.init()
 screen = pygame.display.set_mode((900,900),pygame.RESIZABLE)
 
@@ -15,6 +16,7 @@ CLIP_X1 = 160
 CLIP_Y1 = 140
 CLIP_X2 = 400
 CLIP_Y2 = 360
+
 
 
 with open('model.json','r') as f:
@@ -75,7 +77,7 @@ while True:
                   'space':    result[0][28],
                   }
     
-    predict = sorted(predict.items(), key=operator.itemgetter(1), reverse=True)
+  predict = sorted(predict.items(), key=operator.itemgetter(1), reverse=True)
     
     if(predict[0][1] >= 1.0):
         predict_img  = pygame.image.load(os.getcwd() + '/dataset/images/' + predict[0][0] + '.png')
@@ -88,7 +90,8 @@ while True:
 
     if interrupt & 0xFF == ord('q'): # esc key
         break
-            
+
+        
 pygame.quit()
 cap.release()
 cv2.destroyAllWindows()
